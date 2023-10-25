@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data () {
         return {
+            newTodoInputVal: '',
             newTodo: {
                 text: '',
                 done: false
@@ -27,10 +28,26 @@ createApp({
     methods: {
        
         addTodo () {
+
             console.log('add');
-           // this.newTodo = '';
-            this.todos.unshift(this.newTodo);
-            
+
+            /*
+            const newTodo = {
+                text: this.newTodoInputVal,
+                done: false,
+            };
+
+            this.todos.unshift(newTodo);
+            */
+
+            const newTodo = {...this.newTodo};
+            this.newTodo.text = '';
+            this.todos.unshift(newTodo);
+        },
+        deleteTodo(indexTodo){
+            console.log('delete');
+            this.todos.splice(indexTodo,1);
+
         }
     },
     mounted(){

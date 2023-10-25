@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Vue To Do List</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script> 
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="https://kit.fontawesome.com/bc42e2820a.js" crossorigin="anonymous"></script> 
 </head>
 <body>
     <div id="app">
@@ -18,7 +19,9 @@
         <h3>Cose da fare:</h3>
         <ul>
             <li v-for="(todo,index) in todos
-            " :class="todo.done === true ? 'line' : ''">{{ todo.text }}</li>
+            " :class="todo.done === true ? 'line' : ''">{{ todo.text }}
+            <span class="close-icon" @click="deleteTodo(index)"><i class="fa-solid fa-xmark"></i></span>
+            </li>
         </ul>
 
 

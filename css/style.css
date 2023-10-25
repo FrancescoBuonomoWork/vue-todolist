@@ -8,3 +8,6 @@
     color: red;
     text-decoration: line-through;
 }
+.close-icon{
+    cursor: pointer;
+}
