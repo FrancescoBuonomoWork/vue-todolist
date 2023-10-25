@@ -14,10 +14,10 @@
 
             <h1>Titolo</h1>
             <div>
-                <input type="text" v-model="newTodo.text" @keyup.enter="addTodo()">
+                <input type="text" v-model="newTodoInputVal" @keyup.enter="addTodo()">
                 <button @click="addTodo()">Aggiungi</button>
 
-                <p class="error">Elemento non valido</p>
+                <!-- <p class="error">Elemento non valido</p> -->
             </div>
     
             <h3>Cose da fare:</h3>

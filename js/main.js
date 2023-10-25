@@ -30,20 +30,23 @@ createApp({
         addTodo() {
 
             console.log('add');
-
-            /*
+            
+            
+           // if (this.newTodoInputVal.lengh > 5) {}
             const newTodo = {
                 text: this.newTodoInputVal,
                 done: false,
             };
-
-            this.todos.unshift(newTodo);
-            */
-
+            this.newTodoInputVal = '';
+                this.todos.unshift(newTodo);
             
-            const newTodo = { ...this.newTodo };
-            this.newTodo.text = '';
-            this.todos.unshift(newTodo);
+            //console.log(this.newTodoInputVal.length)
+            
+            // secondo metodo con lo spread ... creamo un nuovo elemento
+            // const newTodo = { ...this.newTodo };
+            // this.newTodo.text = '';
+            
+            // this.todos.unshift(newTodo);
 
         },
         deleteTodo(indexTodo) {
