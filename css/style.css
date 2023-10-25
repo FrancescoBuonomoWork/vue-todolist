@@ -3,7 +3,14 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+ol,ul,menu{
+    list-style: none;
+    padding: 0;
+}
+.container{
+    margin: 0 auto;
+    width: 900px;
+}
 .line{
     color: red;
     text-decoration: line-through;

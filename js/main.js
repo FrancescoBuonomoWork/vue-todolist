@@ -1,7 +1,7 @@
 const { createApp } = Vue
 
 createApp({
-    data () {
+    data() {
         return {
             newTodoInputVal: '',
             newTodo: {
@@ -26,8 +26,8 @@ createApp({
         }
     },
     methods: {
-       
-        addTodo () {
+
+        addTodo() {
 
             console.log('add');
 
@@ -40,17 +40,19 @@ createApp({
             this.todos.unshift(newTodo);
             */
 
-            const newTodo = {...this.newTodo};
+
+            const newTodo = { ...this.newTodo };
             this.newTodo.text = '';
             this.todos.unshift(newTodo);
+
         },
-        deleteTodo(indexTodo){
+        deleteTodo(indexTodo) {
             console.log('delete');
-            this.todos.splice(indexTodo,1);
+            this.todos.splice(indexTodo, 1);
 
         }
     },
-    mounted(){
+    mounted() {
         console.log('vue funziona')
         console.log(this.todos)
     }

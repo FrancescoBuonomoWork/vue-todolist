@@ -10,19 +10,22 @@
 </head>
 <body>
     <div id="app">
-        <h1>Titolo</h1>
-        <div>
-            <input type="text" v-model="newTodo.text">
-            <button @click="addTodo()">Aggiungi</button>
-        </div>
+        <div class="container">
 
-        <h3>Cose da fare:</h3>
-        <ul>
-            <li v-for="(todo,index) in todos
-            " :class="todo.done === true ? 'line' : ''">{{ todo.text }}
-            <span class="close-icon" @click="deleteTodo(index)"><i class="fa-solid fa-xmark"></i></span>
-            </li>
-        </ul>
+            <h1>Titolo</h1>
+            <div>
+                <input type="text" v-model="newTodo.text" @keyup.enter="addTodo()">
+                <button @click="addTodo()">Aggiungi</button>
+            </div>
+    
+            <h3>Cose da fare:</h3>
+            <ul>
+                <li v-for="(todo,index) in todos
+                " :class="todo.done === true ? 'line' : ''">{{ todo.text }}
+                <span class="close-icon" @click="deleteTodo(index)"><i class="fa-solid fa-xmark"></i></span>
+                </li>
+            </ul>
+        </div>
 
 
 
