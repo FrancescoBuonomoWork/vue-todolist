@@ -16,9 +16,9 @@
         </div>
 
         <h3>Cose da fare:</h3>
-        <ol>
-            <li>fare la spesa</li>
-        </ol>
+        <ul>
+            <li v-for="(todo,index) in todos">{{ todo.text }}</li>
+        </ul>
 
 
 
