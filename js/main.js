@@ -25,11 +25,7 @@ createApp({
         }
     },
     methods: {
-        isDone (indexDone) {
-            if (this.todos[indexDone].done) {
-                
-            }
-        },
+       
         addTodo () {
             console.log('add');
            // this.newTodo = '';
