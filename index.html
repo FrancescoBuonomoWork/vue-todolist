@@ -19,15 +19,20 @@
 
                 <!-- <p class="error">Elemento non valido</p> -->
             </div>
-    
-            <h3>Cose da fare:</h3>
-            <ul>
-                <li v-for="(todo,index) in todos
-                " :class="todo.done === true ? 'line' : ''"
-                @click="isDone(index)">{{ todo.text }}
-                <span class="close-icon" @click="deleteTodo(index)"><i class="fa-solid fa-xmark"></i></span>
-                </li>
-            </ul>
+            <div class="main" v-if="todos.length > 0">
+                <h3>Cose da fare:</h3>
+                <ul>
+                    <li v-for="(todo,index) in todos
+                    " :class="todo.done === true ? 'line' : ''"
+                    @click="isDone(index)" :key="index">{{ todo.text }}
+                    <span class="close-icon" @click="deleteTodo(index)"><i class="fa-solid fa-xmark"></i></span>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="main" v-else>
+                <h3>Non ci sono cosa da fare </h3>
+            </div>
         </div>
 
 
