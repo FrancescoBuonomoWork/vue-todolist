@@ -3,7 +3,10 @@ const { createApp } = Vue
 createApp({
     data () {
         return {
-            newTodo: '',
+            newTodo: {
+                text: '',
+                done: false
+            },
             todos: [
                 {
                     text: 'Fare i compiti',
@@ -22,9 +25,20 @@ createApp({
         }
     },
     methods: {
-
+        isDone (indexDone) {
+            if (this.todos[indexDone].done) {
+                
+            }
+        },
+        addTodo () {
+            console.log('add');
+           // this.newTodo = '';
+            this.todos.unshift(this.newTodo);
+            
+        }
     },
     mounted(){
         console.log('vue funziona')
+        console.log(this.todos)
     }
 }).mount('#app')
