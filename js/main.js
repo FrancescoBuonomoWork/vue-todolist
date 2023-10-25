@@ -40,7 +40,7 @@ createApp({
             this.todos.unshift(newTodo);
             */
 
-
+            
             const newTodo = { ...this.newTodo };
             this.newTodo.text = '';
             this.todos.unshift(newTodo);
@@ -50,6 +50,14 @@ createApp({
             console.log('delete');
             this.todos.splice(indexTodo, 1);
 
+        },
+        isDone(indexTodo) {
+            if(this.todos[indexTodo].done === true) {
+                this.todos[indexTodo].done = false
+
+            } else {
+                this.todos[indexTodo].done = true
+            }
         }
     },
     mounted() {

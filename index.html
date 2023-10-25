@@ -16,12 +16,15 @@
             <div>
                 <input type="text" v-model="newTodo.text" @keyup.enter="addTodo()">
                 <button @click="addTodo()">Aggiungi</button>
+
+                <p class="error">Elemento non valido</p>
             </div>
     
             <h3>Cose da fare:</h3>
             <ul>
                 <li v-for="(todo,index) in todos
-                " :class="todo.done === true ? 'line' : ''">{{ todo.text }}
+                " :class="todo.done === true ? 'line' : ''"
+                @click="isDone(index)">{{ todo.text }}
                 <span class="close-icon" @click="deleteTodo(index)"><i class="fa-solid fa-xmark"></i></span>
                 </li>
             </ul>
