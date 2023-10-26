@@ -33,16 +33,16 @@ createApp({
             
             
             const newTodo = {
-                text: this.newTodoInputVal,
+                text: this.newTodoInputVal.trim(),
                 done: false,
             };
             // if (this.newTodoInputVal.lengh > 5) {}
             if (newTodo.text.length > 5) {
                 
-                this.newTodoInputVal = '';
+               
                this.todos.unshift(newTodo);
            }
-            
+             this.newTodoInputVal = '';
             //console.log(newTodo.text.length)
             
             // secondo metodo con lo spread ... creamo un nuovo elemento
