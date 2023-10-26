@@ -14,7 +14,9 @@
 
             <h1>Titolo</h1>
             <div>
-                <input type="text" v-model="newTodoInputVal" @keyup.enter="addTodo()">
+                <input type="text"
+                 v-model="newTodoInputVal"
+                 @keyup.enter="addTodo()">
                 <button @click="addTodo()">Aggiungi</button>
 
                 <!-- <p class="error">Elemento non valido</p> -->
@@ -22,10 +24,11 @@
             <div class="main" v-if="todos.length > 0">
                 <h3>Cose da fare:</h3>
                 <ul>
-                    <li v-for="(todo,index) in todos
+                    <li class="list-item"
+                     v-for="(todo,index) in todos
                     " :class="todo.done === true ? 'line' : ''"
                     @click="isDone(index)" :key="index">{{ todo.text }}
-                    <span class="close-icon" @click="deleteTodo(index)"><i class="fa-solid fa-xmark"></i></span>
+                    <span class="close-icon" @click.stop="deleteTodo(index)"><i class="fa-solid fa-xmark"></i></span>
                     </li>
                 </ul>
 
